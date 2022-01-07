@@ -27,6 +27,8 @@ export class VehiclesComponent implements OnInit {
       licensePlate: '00-00-00',
       price: 6850,
       priceB2B: 6850,
+      image:
+        'https://static.piscapisca.pt/custom/companies/company_BEb/stand_p8Q/vehicle_jR9v5/12f73f83-b900-4785-bcdc-4100016978f6.jpg',
     },
     {
       id: '4rt4y',
@@ -47,6 +49,8 @@ export class VehiclesComponent implements OnInit {
       licensePlate: 'A1-20-CR',
       price: 12300,
       priceB2B: 11000,
+      image:
+        'https://static.piscapisca.pt/custom/companies/company_BEb/stand_p8Q/vehicle_jR9v5/12f73f83-b900-4785-bcdc-4100016978f6.jpg',
     },
   ];
 

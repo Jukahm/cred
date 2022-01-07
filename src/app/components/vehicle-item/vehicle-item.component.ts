@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Vehicle } from '../models/vehicle.interface';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-vehicle-item',
@@ -7,7 +8,9 @@ import { Vehicle } from '../models/vehicle.interface';
   styleUrls: ['./vehicle-item.component.scss'],
 })
 export class VehicleItemComponent implements OnInit {
-  @Input() vehicle: Vehicle | undefined;
+  @Input() vehicle: Vehicle;
+  isChecked: boolean;
+  faEdit = faEdit;
 
   constructor() {}
 

@@ -1,0 +1,106 @@
+img {
+  width: 40%;
+  height: 40%;
+  border-radius: 4px;
+  float: left;
+}
+
+.cardContainer {
+  top: 319px;
+  left: 44px;
+  width: 336px;
+  height: 244px;
+  background: #fff no-repeat padding-box;
+  border: 1px solid #c8cfd6;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  display: flex;
+}
+
+.cardContainerChecked {
+  width: 336px;
+  height: 244px;
+  background: #f0f8ff no-repeat padding-box;
+  border: 1px solid #004bf6;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 8px;
+  display: flex;
+}
+
+.infoContainer {
+  max-width: -webkit-fill-available;
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+
+.infoBody {
+  display: flex;
+  padding: 0px 8px;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  height: 30%;
+  & p {
+    margin-top: 12px;
+    margin-bottom: 2px;
+  }
+}
+
+.infoFooter {
+  margin-top: 8px;
+}
+
+.divider {
+  color: gray;
+}
+
+.status {
+  border: 1px solid #004bf6;
+  border-radius: 4px;
+  margin-left: 8px;
+  width: 156px;
+  height: 20px;
+  text-align: center;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:before {
+  background-color: purple;
+}
+
+.price {
+  border: 1px solid #c8cfd6;
+  color: #004bf6;
+  border-radius: 4px;
+  width: 156px;
+  height: 20px;
+  text-align: center;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.editContainer {
+  display: flex;
+  justify-content: end;
+}
+
+.editBtn {
+  color: #004bf6;
+  border: 1px solid #004bf6;
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 32px;
+}

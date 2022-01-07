@@ -23,4 +23,5 @@ export interface Vehicle {
   brand: Brand | null;
   price: number;
   priceB2B: number;
+  image: string;
 }

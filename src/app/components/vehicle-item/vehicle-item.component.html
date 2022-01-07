@@ -1,1 +1,47 @@
-<p>vehicle-item works!</p>
+<div [ngClass]="isChecked ? 'cardContainerChecked' : 'cardContainer'">
+  <div class="infoContainer">
+    <img src="{{ vehicle.image }}" alt="car" />
+    <div class="infoHeader">
+      <div class="status">Por publicar</div>
+      <input
+        type="checkbox"
+        class="checkBtn"
+        (change)="isChecked = !isChecked"
+      />
+    </div>
+    <div class="infoBody">
+      <p>
+        {{ vehicle.brand.name }}
+        <span [ngStyle]="{ fontWeight: 'bold' }">
+          {{ vehicle.model.name }}
+        </span>
+      </p>
+      <span [ngStyle]="{ fontWeight: 'bold' }">
+        {{ vehicle.serie.name }}
+      </span>
+    </div>
+    <div class="infoFooter">
+      {{ vehicle.registerYear }} <span class="divider">|</span>
+      {{ vehicle.kms }} km <span class="divider">|</span>
+      {{ vehicle.licensePlate }} <span class="divider">|</span> ID
+      {{ vehicle.id }}
+      <hr />
+      <div [ngStyle]="{ display: 'flex' }">
+        <div>
+          Particulares
+          <div class="price">{{ vehicle.price }} €</div>
+        </div>
+        <div [ngStyle]="{ marginLeft: '8px' }">
+          Profissionais
+          <div class="price">{{ vehicle.priceB2B }} €</div>
+        </div>
+      </div>
+      <hr />
+      <div class="editContainer">
+        <button class="editBtn">
+          <fa-icon [icon]="faEdit"></fa-icon> Editar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
