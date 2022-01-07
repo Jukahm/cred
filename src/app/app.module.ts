@@ -6,19 +6,17 @@ import { AppComponent } from './app.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { VehicleItemComponent } from './components/vehicle-item/vehicle-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    VehiclesComponent,
-    VehicleItemComponent
-  ],
+  declarations: [AppComponent, VehiclesComponent, VehicleItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

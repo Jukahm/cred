@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Vehicle } from '../models/vehicle.interface';
+import { Vehicle } from 'src/app/models/vehicle.interface';
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
