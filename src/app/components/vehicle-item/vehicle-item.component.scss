@@ -3,6 +3,10 @@ img {
   height: 40%;
   border-radius: 4px;
   float: left;
+  @media (min-width: 768px) {
+    max-width: 220px;
+    max-height: 158px;
+  }
 }
 
 .cardContainer {
@@ -16,6 +20,11 @@ img {
   padding: 8px;
   margin-top: 8px;
   display: flex;
+  @media (min-width: 768px) {
+    width: 90%;
+    height: 25vh;
+    display: block;
+  }
 }
 
 .cardContainerChecked {
@@ -27,6 +36,11 @@ img {
   padding: 8px;
   margin-top: 8px;
   display: flex;
+  @media (min-width: 768px) {
+    width: 90%;
+    height: 25vh;
+    display: block;
+  }
 }
 
 .infoContainer {
@@ -37,6 +51,7 @@ img {
   display: flex;
   align-items: center;
   height: fit-content;
+  justify-content: space-between;
 }
 
 .infoBody {
@@ -49,10 +64,28 @@ img {
     margin-top: 12px;
     margin-bottom: 2px;
   }
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+hr {
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .infoFooter {
   margin-top: 8px;
+  @media (min-width: 768px) {
+    margin-left: 16px;
+  }
+}
+
+.carInfo {
+  @media (min-width: 768px) {
+    margin-left: 8px;
+  }
 }
 
 .divider {
@@ -90,9 +123,28 @@ input[type="checkbox"]:before {
   font-weight: bold;
 }
 
+.deskInfo {
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-flow: column;
+    float: right;
+  }
+}
+
+.mobInfo {
+  display: flex;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
 .editContainer {
   display: flex;
   justify-content: end;
+  @media (min-width: 768px) {
+    margin-top: 20px;
+  }
 }
 
 .editBtn {

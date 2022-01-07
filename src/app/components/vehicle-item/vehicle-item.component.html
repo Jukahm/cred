@@ -9,6 +9,16 @@
         (change)="isChecked = !isChecked"
       />
     </div>
+    <div class="deskInfo">
+      <div>
+        Particulares
+        <div class="price">{{ vehicle.price }} €</div>
+      </div>
+      <div>
+        Profissionais
+        <div class="price">{{ vehicle.priceB2B }} €</div>
+      </div>
+    </div>
     <div class="infoBody">
       <p>
         {{ vehicle.brand.name }}
@@ -21,27 +31,29 @@
       </span>
     </div>
     <div class="infoFooter">
-      {{ vehicle.registerYear }} <span class="divider">|</span>
-      {{ vehicle.kms }} km <span class="divider">|</span>
-      {{ vehicle.licensePlate }} <span class="divider">|</span> ID
-      {{ vehicle.id }}
+      <span class="carInfo">
+        {{ vehicle.registerYear }} <span class="divider">|</span>
+        {{ vehicle.kms }} km <span class="divider">|</span>
+        {{ vehicle.licensePlate }} <span class="divider">|</span> ID
+        {{ vehicle.id }}
+      </span>
       <hr />
-      <div [ngStyle]="{ display: 'flex' }">
-        <div>
-          Particulares
-          <div class="price">{{ vehicle.price }} €</div>
-        </div>
-        <div [ngStyle]="{ marginLeft: '8px' }">
-          Profissionais
-          <div class="price">{{ vehicle.priceB2B }} €</div>
-        </div>
+    </div>
+    <div class="mobInfo">
+      <div>
+        Particulares
+        <div class="price">{{ vehicle.price }} €</div>
       </div>
-      <hr />
-      <div class="editContainer">
-        <button class="editBtn">
-          <fa-icon [icon]="faEdit"></fa-icon> Editar
-        </button>
+      <div [ngStyle]="{ marginLeft: '8px' }">
+        Profissionais
+        <div class="price">{{ vehicle.priceB2B }} €</div>
       </div>
+    </div>
+    <hr />
+    <div class="editContainer">
+      <button class="editBtn">
+        <fa-icon [icon]="faEdit"></fa-icon> Editar
+      </button>
     </div>
   </div>
 </div>
