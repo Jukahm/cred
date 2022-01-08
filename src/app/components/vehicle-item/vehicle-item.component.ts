@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Vehicle } from 'src/app/models/vehicle.interface';
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-item',
@@ -12,7 +13,15 @@ export class VehicleItemComponent implements OnInit {
   isChecked: boolean;
   faEdit = faEdit;
 
-  constructor() {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.vehicle = Object.assign(this.vehicle, params);
+    });
+  }
+
+  navigate() {
+    this.router.navigate(['/edit', this.vehicle.id]);
+  }
 }

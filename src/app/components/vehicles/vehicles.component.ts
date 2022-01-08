@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from 'src/app/services/vehicle.service';
 import { Vehicle } from 'src/app/models/vehicle.interface';
+import { Store, State } from '@ngrx/store';
+import { VehicleState } from 'src/app/models/state.model';
+import { addVehicles } from 'src/app/store/actions/vehicle.action';
 
 @Component({
   selector: 'app-vehicles',
@@ -8,15 +11,22 @@ import { Vehicle } from 'src/app/models/vehicle.interface';
   styleUrls: ['./vehicles.component.scss'],
 })
 export class VehiclesComponent implements OnInit {
-  vehicles: Vehicle[] = [];
-  dataFile: any = [];
+  vehicles$: Vehicle[];
 
-  constructor(private vehicleService: VehicleService) {}
+  constructor(
+    private vehicleService: VehicleService,
+    private store: Store<VehicleState>,
+    private state: State<VehicleState>
+  ) {}
 
   ngOnInit(): void {
-    this.vehicleService.getVehicles().subscribe(
-      (data) =>
-        (this.vehicles = data._embedded.results.map((entry) => ({
+    this.populateVehicles();
+  }
+
+  populateVehicles() {
+    this.vehicleService.getVehicles().subscribe((data) => {
+      data._embedded.results.map((entry) => {
+        const vehicle: Vehicle = {
           id: entry.index_id,
           model: entry.object.model,
           price: entry.object.price,
@@ -27,8 +37,10 @@ export class VehiclesComponent implements OnInit {
           registerYear: entry.object.register_year,
           kms: entry.object.kms,
           licensePlate: entry.object.license_plate,
-        })))
-    );
-    console.log(this.vehicles);
+        };
+        this.store.dispatch(addVehicles(vehicle));
+      });
+      this.vehicles$ = this.state.getValue().vehicle;
+    });
   }
 }

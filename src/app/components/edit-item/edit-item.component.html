@@ -1,0 +1,151 @@
+<h1 *ngIf="vehicle">
+  A editar veículo: {{ vehicle.brand.name }} {{ vehicle.model.name }}
+</h1>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="item-left">
+        <label for="marca">Marca</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="text"
+          id="marca"
+          name="marca"
+          placeholder="Marca"
+          formControlName="marca"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="modelo">Modelo</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="text"
+          id="modelo"
+          name="modelo"
+          placeholder="Modelo"
+          formControlName="modelo"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="serie">Série</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="text"
+          id="serie"
+          name="serie"
+          placeholder="Serie"
+          formControlName="serie"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="ano">Ano</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="number"
+          id="ano"
+          name="ano"
+          formControlName="ano"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="kms">Kms</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="number"
+          id="kms"
+          name="kms"
+          formControlName="kms"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="matricula">Matricula</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="text"
+          id="matricula"
+          name="matricula"
+          placeholder="Matrícula"
+          formControlName="matricula"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="preco">Preço Particulares</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="number"
+          id="preco"
+          name="preco"
+          formControlName="preco"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="precoB2B">Preço Profissionais</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="number"
+          id="precoB2B"
+          name="precoB2B"
+          formControlName="precoB2B"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="item-left">
+        <label for="imagem">Imagem</label>
+      </div>
+      <div class="item-right">
+        <input
+          type="url"
+          id="imagem"
+          name="imagem"
+          placeholder="Imagem"
+          formControlName="imagem"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="item-left"></div>
+      <div class="item-right">
+        <input
+          type="submit"
+          [disabled]="form.invalid"
+          id="btn-submit"
+          name="btn-submit"
+          value="Submit"
+        />
+      </div>
+    </div>
+  </form>
+</div>
