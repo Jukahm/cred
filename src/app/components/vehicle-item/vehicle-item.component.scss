@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body,
+span {
+  font-family: "Roboto", sans-serif;
+}
+
 img {
   width: 40%;
   height: 40%;
@@ -25,6 +32,10 @@ img {
     height: 25vh;
     display: block;
   }
+}
+
+.cardContainer:hover {
+  border-color: #004bf6;
 }
 
 .cardContainerChecked {
